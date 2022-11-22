@@ -34,14 +34,6 @@ class Solution {
         public int compareTo(GenreType o) {
             return o.totalPlayTimes - this.totalPlayTimes;
         }
-
-        @Override
-        public String toString() {
-            return "GenreType{" +
-                    "songList=" + songList +
-                    ", totalPlayTimes=" + totalPlayTimes +
-                    '}';
-        }
     }
 
     public int[] solution(String[] genres, int[] plays) {
@@ -74,11 +66,9 @@ class Solution {
         }
 
         Collections.sort(genreTypeList);
-
-
+        
         ArrayList<Integer> answerList = new ArrayList<Integer>();
-
-
+        
         for (GenreType genreType : genreTypeList) {
             answerList.add(genreType.songList.get(0).num);
             if (genreType.songList.size() != 1) {
@@ -89,8 +79,7 @@ class Solution {
         int[] answer = answerList.stream()
                 .mapToInt(i -> i)
                 .toArray();
-
-
+        
         return answer;
     }
 }
