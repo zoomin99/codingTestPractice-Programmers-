@@ -14,7 +14,9 @@ class Solution {
     }
 
     public int solution(int bridge_length, int weight, int[] truck_weights) {
-        int answer = 0;
+        int answer = 1;
+        //뒷 꽁무니까지 지나가야 완전히 지난것이므로 1로 두고 ++하는게 맞다
+        
         int passTruckCount = 0;
         Queue<Truck> waitingQueue = new LinkedList<>();
         List<Truck> movingList = new LinkedList<>();
@@ -48,6 +50,6 @@ class Solution {
             answer++;
         }
 
-        return answer + 1;
+        return answer;
     }
 }
