@@ -3,9 +3,6 @@ import java.util.Collections;
 
 class Solution {
     public int solution(int[] citations) {
-        int answer = citations.length;
-        boolean right = false, left = false;
-
         Integer[] citationsToInteger = Arrays.stream(citations).boxed().toArray(Integer[]::new);
 
         Arrays.sort(citationsToInteger, Collections.reverseOrder());
@@ -17,6 +14,6 @@ class Solution {
                 return i;
             }
         }
-        return answer;
+        return citationsToInteger.length;
     }
 }
